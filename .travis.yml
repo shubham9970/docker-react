@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t sbellale99/docker-react -f Dockerfile.dev .
+script:
+  - docker run sbellale99/docker-react npm run test -- --coverage
