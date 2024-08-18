@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules #if check line carefully there is no colon, so here we are not mapping anything as node
+                          #module we are not changing we just change our code so
+                          #we're just using node_module folder from conatiner.
+      - .:/app  #conatiner make a reference to current working directory snapshot.
+                #It is kind of virtual mapping folder inside container to folder outside container.
