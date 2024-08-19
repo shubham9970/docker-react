@@ -5,4 +5,4 @@ before_install:
   - docker build -t sbellale/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run sbellale/docker-react npm run test -- --coverage --ci
+  - docker run sbellale/docker-react npm run test -- --coverage --watchAll=false
