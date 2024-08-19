@@ -1,7 +1,7 @@
 FROM node:alpine
 WORKDIR '/app'
-copy ./ ./
+copy package.json .
 RUN npm install
 RUN npm install --save-dev @babel/plugin-proposal-private-property-in-object
-
+copy . .
 CMD ["npm","run","start"]
